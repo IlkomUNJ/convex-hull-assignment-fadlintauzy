@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-f40f60ce619029c3c7ad.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Qtests",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Qtests::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Qtests-Debug-6dd82a5e10f76be3a889.json",
+					"name" : "Qtests",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Qtests_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Qtests_autogen-Debug-8a786846802c17c4f1c8.json",
+					"name" : "Qtests_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Qtests_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Qtests_autogen_timestamp_deps-Debug-b7ff536ee6e8ef71b829.json",
+					"name" : "Qtests_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Kuliah/SEM5/QT/Qtests/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug",
+		"source" : "C:/Kuliah/SEM5/QT/Qtests"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}
