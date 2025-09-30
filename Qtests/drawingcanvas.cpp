@@ -93,13 +93,19 @@ static std::vector<QPointF> convexHull(std::vector<QPointF> pts, int& counter) {
 
 static std::vector<QPointF> slowCConvexHull(std::vector<QPointF> pts, int& counter) {
     counter = 0;
-    if (pts.size() < 3) return pts;
+    size_t N = pts.size();
+    if (N < 3) return pts;
 
 
     std::vector<std::pair<QPointF, QPointF>> E;
 
-    for (size_t i = 0; i < pts.size(); ++i) {
-        for (size_t j = 0; j < pts.size(); ++j) {
+
+    for (size_t i = 0; i < N; ++i) {
+        for (size_t j = 0; j < N; ++j) {
+
+
+            counter++;
+
             if (i == j) continue;
 
             const QPointF &p = pts[i];
@@ -109,7 +115,7 @@ static std::vector<QPointF> slowCConvexHull(std::vector<QPointF> pts, int& count
             bool valid = true;
 
 
-            for (size_t k = 0; k < pts.size(); ++k) {
+            for (size_t k = 0; k < N; ++k) {
                 if (k == i || k == j) continue;
 
                 const QPointF &r = pts[k];
@@ -117,7 +123,6 @@ static std::vector<QPointF> slowCConvexHull(std::vector<QPointF> pts, int& count
                 counter++;
 
                 if (cross(p, q, r) > 0) {
-
                     valid = false;
                     break;
                 }
@@ -140,9 +145,12 @@ static std::vector<QPointF> slowCConvexHull(std::vector<QPointF> pts, int& count
     do {
         hull.push_back(current);
 
-        QPointF next = QPointF();
-
+        QPointF next;
         bool foundNext = false;
+
+
+        counter++;
+
         for (const auto &edge : E) {
             if (edge.first == current) {
                 next = edge.second;
@@ -158,6 +166,7 @@ static std::vector<QPointF> slowCConvexHull(std::vector<QPointF> pts, int& count
 
     return hull;
 }
+
 
 
 DrawingCanvas::DrawingCanvas(QWidget *parent) : QGraphicsView(parent)
